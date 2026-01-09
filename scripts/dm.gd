@@ -6,6 +6,8 @@ extends CanvasLayer
 var dialogue_lines: Array[String] = []
 var current_line_index = 0
 var is_active = false
+signal line_shown(text)
+
 
 
 func start_dialogue(lines: Array[String]):
@@ -23,7 +25,11 @@ func start_dialogue(lines: Array[String]):
 	show_text()
 
 func show_text():
-	text_label.text = dialogue_lines[current_line_index]
+	var current_line = dialogue_lines[current_line_index]
+	text_label.text = current_line
+
+	emit_signal("line_shown", current_line)
+
 
 func _input(event):
 	if not is_active:

@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dm="*res://scenes/dm.tscn"
+PlayerStats="*res://scripts/PlayerStats.gd"
 
 [input]
 

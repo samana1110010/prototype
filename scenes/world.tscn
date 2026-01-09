@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c5x6q7idvhi1v"]
+[gd_scene load_steps=33 format=3 uid="uid://c5x6q7idvhi1v"]
 
 [ext_resource type="PackedScene" uid="uid://crg6h10u1387c" path="res://scenes/bro.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://1jv6khwrocyy" path="res://assesets/house (1).jpg" id="2_k0juu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c614ficjiarui" path="res://assesets/bikemain.jpg" id="6_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://ba21pnjg8bu2b" path="res://assesets/rest.jpg" id="7_o8fc1"]
 [ext_resource type="Script" uid="uid://bc8eeqf5bl2a2" path="res://scripts/npc_2.gd" id="9_7r4gi"]
+[ext_resource type="Script" uid="uid://b07c1pba2liyt" path="res://scenes/hud.gd" id="9_7t5mc"]
 [ext_resource type="Script" uid="uid://b4u83ubplxim8" path="res://scripts/npc_1.gd" id="9_q5onr"]
 [ext_resource type="PackedScene" uid="uid://bwulkc0k8i7dn" path="res://scenes/bike.tscn" id="10_w7kh3"]
 [ext_resource type="Script" uid="uid://dy2ccy08c1ire" path="res://scripts/node.gd" id="11_e3hyu"]
@@ -16381,6 +16382,21 @@ radius = 144.84819
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8fc1"]
 size = Vector2(258.20514, 109.88666)
 
+[sub_resource type="Animation" id="Animation_lakw3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_7t5mc"]
 resource_name = "dnc"
 length = 20.0
@@ -16396,21 +16412,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.12077383, 0.20053703, 0.5114659, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lakw3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pm21f"]
@@ -16432,6 +16433,36 @@ layer_0/tile_data = PackedInt32Array(-1310759, 0, 0, -1245223, 0, 1, -1179687, 0
 
 [node name="bro" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(-668.2814, 36.125305)
+
+[node name="HUD" type="Control" parent="bro"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_7t5mc")
+
+[node name="EnergyBar" type="ProgressBar" parent="bro/HUD"]
+layout_mode = 1
+offset_left = -27.911707
+offset_top = -12.203964
+offset_right = -23.911707
+offset_bottom = 14.796036
+scale = Vector2(1.5202832, 1.3605747)
+step = 1.0
+show_percentage = false
+
+[node name="MoneyLabel" type="Label" parent="bro/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.729683
+offset_top = -37.101154
+offset_right = 6.270319
+offset_bottom = -14.101154
+grow_horizontal = 2
+scale = Vector2(0.75018823, 0.7025798)
+text = "Rs.0"
 
 [node name="npc1" parent="." instance=ExtResource("4_71j4m")]
 position = Vector2(969.72577, -95.92761)
