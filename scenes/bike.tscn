@@ -1,0 +1,115 @@
+[gd_scene load_steps=16 format=3 uid="uid://bwulkc0k8i7dn"]
+
+[ext_resource type="Script" uid="uid://gs71s1kcoamk" path="res://scripts/bike.gd" id="1_77r6i"]
+[ext_resource type="Texture2D" uid="uid://rb1u1s5asgv" path="res://assesets/okayfinal.png" id="2_fdhfo"]
+[ext_resource type="Texture2D" uid="uid://ct6aepp344dat" path="res://assesets/ughhhhhhhhhhhhh.png" id="2_juvdb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqlqk"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(0, 0, 125, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lfrf"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(126, 0, 125, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7eds"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(252, 0, 125, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juvdb"]
+atlas = ExtResource("2_juvdb")
+region = Rect2(0, 0, 199, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvj5b"]
+atlas = ExtResource("2_juvdb")
+region = Rect2(25, 0, 190, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nrme"]
+atlas = ExtResource("2_juvdb")
+region = Rect2(215, 0, 190, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1jr7"]
+atlas = ExtResource("2_juvdb")
+region = Rect2(405, 0, 190, 195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdhfo"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(0, 191, 125, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irgsv"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(125, 191, 125, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtgu3"]
+atlas = ExtResource("2_fdhfo")
+region = Rect2(250, 191, 125, 191)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdcyq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqlqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lfrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7eds")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juvdb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvj5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nrme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1jr7")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdhfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irgsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtgu3")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oy3wg"]
+
+[node name="bike" type="CharacterBody2D"]
+script = ExtResource("1_77r6i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.99999905, -1)
+scale = Vector2(0.54911566, 0.46742517)
+sprite_frames = SubResource("SpriteFrames_xdcyq")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oy3wg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
