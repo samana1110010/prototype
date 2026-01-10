@@ -32,13 +32,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tr1an"]
-radius = 43.32436
+radius = 64.00781
 
 [node name="npc1" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-16.5, -11.5)
-scale = Vector2(4.3125, 3.4375)
+position = Vector2(-14.5, -12.000001)
+scale = Vector2(3.0625, 3.4375)
 sprite_frames = SubResource("SpriteFrames_xr7qm")
 autoplay = "default"
 frame_progress = 0.4467656

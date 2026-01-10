@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fpunsv3xfo34"
-valid=false
+uid="uid://dq8yeix1mmwkc"
+path="res://.godot/imported/sprite3.png-5f7345726b9c6c5aa64875a4cadc6f0b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://bike56.jpg"
+source_file="res://assesets/sprite3.png"
+dest_files=["res://.godot/imported/sprite3.png-5f7345726b9c6c5aa64875a4cadc6f0b.ctex"]
 
 [params]
 
